@@ -1,0 +1,71 @@
+@import "normolize.scss";
+//  Шрифты
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&family=Signika+Negative&display=swap");
+
+$color_1: rgb(239, 252, 218);
+$color_2: rgb(222, 247, 177);
+$color_3: rgb(190, 218, 118);
+$color_4: rgb(75, 139, 81);
+$color_5: rgb(160, 204, 158);
+$color_6: rgb(207, 235, 211);
+
+body {
+    background-image: url("/img/БамбуковыйЛес.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Montserrat Alternates", sans-serif;
+    // width: 100vh;
+    height: 100%;
+}
+
+.navigation {
+    display: flex;
+    grid-row: auto;
+    justify-content: space-between;
+    // height: 100%;
+    background-color: rgb(75, 139, 81, 0.6);
+    margin-top: 5px;
+
+    // border-radius: 0 0 10px 10px;
+}
+.logos {
+    display: flex;
+    font-size: 35px;
+}
+
+.icons {
+    max-height: 50px;
+    max-width: 50px;
+    margin: 10px 5px 10px 10px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.button {
+    margin-right: 60px;
+    border: none;
+    font-size: 40px;
+}
+
+.container {
+    justify-items: start;
+    margin: auto 0px;
+}
+
+.logotext {
+    margin-top: 14px;
+}
+
+// .blocks{
+//     margin: 2px;
+//     width: 500px;
+//     height: 500px;
+//     border: solid 2px black;
+//     text-align: center;
+//     background-color: aqua;
+
+// }
