@@ -135,6 +135,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 35px;
 }
 
@@ -155,15 +158,47 @@ body {
 
 .button {
   margin-right: 60px;
-  border: none;
   font-size: 40px;
+  text-align: center;
 }
 
+.a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 10px 0 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: solid 2px rgb(160, 204, 158);
+  font-size: 30px;
+}
+
+@media (max-width: 870px) {
+  .logotext {
+    display: none;
+  }
+}
 .container {
   justify-items: start;
   margin: auto 0px;
 }
 
-.logotext {
-  margin-top: 14px;
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 20px 10px 20px;
+  background-color: rgba(75, 139, 81, 0.6);
+  width: auto;
+  height: auto;
+}
+
+.main-content {
+  margin: 10px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1200px;
+  height: 1200px;
 }

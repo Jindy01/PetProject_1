@@ -31,6 +31,7 @@ body {
 }
 .logos {
     display: flex;
+    align-items: center;
     font-size: 35px;
 }
 
@@ -47,8 +48,21 @@ body {
 
 .button {
     margin-right: 60px;
-    border: none;
     font-size: 40px;
+    text-align: center;
+}
+
+.a {
+    display: flex;
+    margin: 0 10px 0 0;
+    align-items: center;
+    border-left: solid 2px $color_5;
+    font-size: 30px;
+}
+@media (max-width: 870px) {
+    .logotext {
+        display: none;
+    }
 }
 
 .container {
@@ -56,9 +70,21 @@ body {
     margin: auto 0px;
 }
 
-.logotext {
-    margin-top: 14px;
+.main {
+    display: flex;
+    margin: 10px 20px 10px 20px;
+    background-color: rgb(75, 139, 81, 0.6);
+    width: auto;
+    height: auto;
 }
+
+.main-content {
+    margin: 10px 0 0 0;
+    display: flex;
+    width: 1200px;
+    height: 1200px;
+}
+
 
 // .blocks{
 //     margin: 2px;
