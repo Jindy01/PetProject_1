@@ -79,12 +79,15 @@ body {
 }
 
 .main-content {
-    margin: 10px 0 0 0;
     display: flex;
+    margin: 10px 0 0 0;
     width: 1200px;
     height: 1200px;
 }
 
+.block-text {
+    font-size: 40px;
+}
 
 // .blocks{
 //     margin: 2px;
