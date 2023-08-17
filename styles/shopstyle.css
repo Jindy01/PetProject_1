@@ -274,3 +274,13 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgb(160, 204, 158);
 }
+
+.main-block {
+  margin: 10px 20px 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+}

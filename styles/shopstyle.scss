@@ -129,3 +129,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: $color_5;
 }
+
+// Styles-Shop
+
+.main-block {
+    margin: 10px 20px 10px 20px;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+}
