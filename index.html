@@ -18,7 +18,8 @@
       <div class="navigation">
         <!-- Logotipe -->
         <div class="logos">
-          <a class="a" href="/index.html">
+          <a onclick="openPage()"
+          class="a" href="/index.html">
             <img class="icons" src="/img/logo.png" />
             <p class="logotext" style="color: aliceblue">ComF</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">GreenS</p>
@@ -27,7 +28,7 @@
         <!-- Logotipe -->
 
         <div class="navigation-buttons">
-          <a class="a" href="/pageofshop.html">
+          <a onclick="openPage('naw')" class="a" href="">
             <img class="icons" src="/img/Коробка.png" />
             <p class="logotext" style="color: aliceblue">Т</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">овары</p>
@@ -53,8 +54,8 @@
         </div>
       </div>
     </header>
-
-    <main class="main">
+    <!-- mn - предназначен для выключения сегмента -->
+    <main id="firstpage" class="mn main">
       <div class="main-content">
         <div class="block-text">
           <h1>
@@ -72,7 +73,8 @@
     </main>
 
     <!-- Разобрать грид -->
-    <div class="img-block">
+    <!-- mn - предназначен для выключения сегмента -->
+    <div class="mn img-block">
       <div class="img-element">
         <img src="/img/Вид.jpg" />
       </div>
