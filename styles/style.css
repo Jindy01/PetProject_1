@@ -123,12 +123,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  grid-row: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: rgba(75, 139, 81, 0.6);
   margin-top: 5px;
+  padding: 5px;
+  background-color: rgba(75, 139, 81, 0.6);
 }
 
 .logos {
@@ -173,15 +173,21 @@ body {
     display: none;
   }
 }
+.all-div-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .container {
   justify-items: start;
   margin: auto 0px;
 }
 
 .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   margin: 10px 20px 10px 20px;
   background-color: rgba(75, 139, 81, 0.6);
   width: auto;
@@ -273,4 +279,42 @@ h1 {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgb(160, 204, 158);
+}
+
+.main-page-shop {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+  margin: 10px 5px 10px 10px;
+  padding: 10px;
+}
+
+.shop-page-assortment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+.shop-page-assortment button {
+  color: aliceblue;
+}
+
+.shop-chears {
+  display: none;
+  margin: 10px 20px 10px 20px;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+}
+
+.shop-tables {
+  display: none;
+  margin: 10px 20px 10px 20px;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
 }

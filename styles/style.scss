@@ -9,6 +9,8 @@ $color_4: rgb(75, 139, 81);
 $color_5: rgb(160, 204, 158);
 $color_6: rgb(207, 235, 211);
 
+// Предназначено для стилизации основной части
+
 body {
     background-image: url("/img/БамбуковыйЛес.jpeg");
     background-size: cover;
@@ -21,13 +23,10 @@ body {
 
 .navigation {
     display: flex;
-    grid-row: auto;
     justify-content: space-between;
-    // height: 100%;
-    background-color: rgb(75, 139, 81, 0.6);
     margin-top: 5px;
-
-    // border-radius: 0 0 10px 10px;
+    padding: 5px;
+    background-color: rgb(75, 139, 81, 0.6);
 }
 .logos {
     display: flex;
@@ -59,13 +58,19 @@ body {
     }
 }
 
+//  Времмено отключено
+.all-div-display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .container {
     justify-items: start;
     margin: auto 0px;
 }
 
 .main {
-    display: flex;
+    display: block;
     margin: 10px 20px 10px 20px;
     background-color: rgb(75, 139, 81, 0.6);
     width: auto;
@@ -82,18 +87,18 @@ body {
 .block-text {
     color: aliceblue;
     text-align: center;
-} h1 {
+}
+h1 {
     font-size: 45px;
 }
 
-.blocks{
+.blocks {
     margin: 2px;
     width: 500px;
     height: 500px;
     border: solid 2px black;
     text-align: center;
     background-color: aqua;
-
 }
 
 .img-block {
@@ -112,7 +117,6 @@ body {
     margin: 10px;
 }
 
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 5px;
@@ -129,3 +133,40 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: $color_5;
 }
+//           Предназначено для стилизации магазина
+
+.main-page-shop {
+    display: none;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+    margin: 10px 5px 10px 10px;
+    padding: 10px;
+}
+
+.shop-page-assortment {
+    display: flex;
+    width: auto;
+    button {
+        color: aliceblue;
+    }
+}
+
+.shop-chears {
+    display: none;
+    margin: 10px 20px 10px 20px;
+    width: auto;
+    height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+}
+
+.shop-tables {
+    display: none;
+    margin: 10px 20px 10px 20px;
+    width: auto;
+    height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+}
+
+

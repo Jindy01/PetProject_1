@@ -18,77 +18,130 @@
       <div class="navigation">
         <!-- Logotipe -->
         <div class="logos">
-          <a onclick="openPage()"
-          class="a" href="/index.html">
+          <button onclick="openPage('main-page')" class="a" href="">
             <img class="icons" src="/img/logo.png" />
             <p class="logotext" style="color: aliceblue">ComF</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">GreenS</p>
-          </a>
+          </button>
         </div>
         <!-- Logotipe -->
 
         <div class="navigation-buttons">
-          <a onclick="openPage('naw')" class="a" href="">
+          <button onclick="openPage('shop-page')" class="a" href="">
             <img class="icons" src="/img/Коробка.png" />
             <p class="logotext" style="color: aliceblue">Т</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">овары</p>
-          </a>
+          </button>
           <!-- .. -->
-          <a onclick="closed()" class="a" href="">
+          <button onclick="closed()" class="a" href="">
             <img class="icons" src="/img/Корзина.png" />
             <p class="logotext" style="color: aliceblue">К</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">орзина</p>
-          </a>
+          </button>
           <!-- .. -->
-          <a onclick="closed()" class="a" href="">
+          <button onclick="closed()" class="a" href="">
             <img class="icons" src="/img/Мы.png" />
             <p class="logotext" style="color: aliceblue">O</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">Нас</p>
-          </a>
+          </button>
           <!-- .. -->
-
-          <!-- Поправить структуру блоков  -->
           <!-- Сделать линейку товаров  -->
           <!-- оформить основную часть сайта  -->
           <!-- Добавить футер -->
         </div>
       </div>
     </header>
+
     <!-- mn - предназначен для выключения сегмента -->
-    <main id="firstpage" class="mn main">
-      <div class="main-content">
-        <div class="block-text">
-          <h1>
-            <strong> Заказ мебели в г. Гомеле </strong>
-          </h1>
-          <br />
-          <p style="font-size: 25px">
-            Оформляйте заказы мебели по всей 'Республике Беларусь' c разным
-            дизайном, обьёмом, под любой вкус и интерьер, так же мы
-            предоставляем скидку нашим клиентам использующих карту наших сетей
-            магазинов мебели: <strong> 21vek.by и divan.by </strong>
-          </p>
+    <div id="main-page" class="scroll all-div-display">
+      <main class="main">
+        <div class="main-content">
+          <div class="block-text">
+            <h1>
+              <strong> Заказ мебели в г. Гомеле </strong>
+            </h1>
+            <br />
+            <p style="font-size: 25px">
+              Оформляйте заказы мебели по всей 'Республике Беларусь' c разным
+              дизайном, обьёмом, под любой вкус и интерьер, так же мы
+              предоставляем скидку нашим клиентам использующих карту наших сетей
+              магазинов мебели: <strong> 21vek.by и divan.by </strong>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <div class="img-block">
+        <div class="img-element">
+          <img src="/img/Вид.jpg" />
+        </div>
+        <div class="img-element">
+          <img src="/img/Вид-2.jpg" alt="" />
+        </div>
+
+        <div class="img-element">
+          <img src="/img/Вид-3.jpg" alt="" />
+        </div>
+
+        <div class="img-element">
+          <img src="/img/Вид-4jpg.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <main id="shop-page" class="scroll main-page-shop">
+      <div class="shop-page-assortment">
+        <div>
+          <button
+            onclick="openPage('shop-chears')"
+            style="border: none"
+            class="a"
+          >
+            <img class="icons" src="/img/Стул.png" alt="" />
+
+            <p class="logotext">Стулья</p>
+          </button>
+        </div>
+        <div>
+          <button onclick="openPage('shop-tables')" class="a">
+            <img class="icons" src="/img/Стол.png" alt="" />
+
+            <p class="logotext">Столы</p>
+          </button>
+        </div>
+        <div>
+          <button class="a">
+            <img class="icons" src="/img/Диван.png" alt="" />
+
+            <p class="logotext">Диваны</p>
+          </button>
+        </div>
+        <div>
+          <button class="a">
+            <img class="icons" src="/img/Кровать.png" alt="" />
+
+            <p class="logotext">Кровати</p>
+          </button>
         </div>
       </div>
     </main>
 
-    <!-- Разобрать грид -->
-    <!-- mn - предназначен для выключения сегмента -->
-    <div class="mn img-block">
-      <div class="img-element">
-        <img src="/img/Вид.jpg" />
-      </div>
-      <div class="img-element">
-        <img src="/img/Вид-2.jpg" alt="" />
-      </div>
+    <div id="shop-chears" class="scroll_asortiment shop-chears">
 
-      <div class="img-element">
-        <img src="/img/Вид-3.jpg" alt="" />
-      </div>
+      ewfnuidhgwiqgrnbisbgfnsi
+      gbasfdasbgfyfdsagybukasb
+      bfdsafdasbgyudfgyubasasd
+      bgfyudasfdbgyuidsafguads
 
-      <div class="img-element">
-        <img src="/img/Вид-4jpg.jpg" alt="" />
-      </div>
+    </div>
+
+    <div id="shop-tables" class="scroll_asortiment shop-tables">
+
+      adsasdgybifadsfgybzdfasgy
+      bsdgfyuabsfdagybsdfabgyus
+      fdabgyubgyuaisfdiuasbgfgf
+      yuagybfdasagyusbfdfsdfsio
+
     </div>
   </body>
 </html>
