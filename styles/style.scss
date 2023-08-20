@@ -9,6 +9,14 @@ $color_4: rgb(75, 139, 81);
 $color_5: rgb(160, 204, 158);
 $color_6: rgb(207, 235, 211);
 
+@mixin Background-template() {
+    display: none;
+    margin: 10px 20px 10px 20px;
+    width: auto;
+    height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+}
+
 // Предназначено для стилизации основной части
 
 body {
@@ -27,6 +35,8 @@ body {
     margin-top: 5px;
     padding: 5px;
     background-color: rgb(75, 139, 81, 0.6);
+    border: solid 2px whitesmoke;
+    border-radius: 2px;
 }
 .logos {
     display: flex;
@@ -72,9 +82,11 @@ body {
 .main {
     display: block;
     margin: 10px 20px 10px 20px;
-    background-color: rgb(75, 139, 81, 0.6);
     width: auto;
     height: auto;
+    background-color: rgb(75, 139, 81, 0.6);
+    border: solid 2px whitesmoke;
+    border-radius: 20px;
 }
 
 .main-content {
@@ -92,15 +104,6 @@ h1 {
     font-size: 45px;
 }
 
-.blocks {
-    margin: 2px;
-    width: 500px;
-    height: 500px;
-    border: solid 2px black;
-    text-align: center;
-    background-color: aqua;
-}
-
 .img-block {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -109,6 +112,8 @@ h1 {
     align-items: center;
     margin: 10px 20px 10px 20px;
     background-color: rgb(75, 139, 81, 0.6);
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
 }
 
 .img-element {
@@ -143,6 +148,8 @@ h1 {
     background-color: rgb(75, 139, 81, 0.6);
     margin: 10px 5px 10px 10px;
     padding: 10px;
+    border: solid 2px whitesmoke;
+    border-radius: 20px;
 }
 
 .shop-page-assortment {
@@ -153,20 +160,44 @@ h1 {
     }
 }
 
-.shop-chears {
-    display: none;
-    margin: 10px 20px 10px 20px;
-    width: auto;
-    height: auto;
-    background-color: rgb(75, 139, 81, 0.6);
+.shop-chears,
+.shop-tables,
+.shop-couchs,
+.shop-beds {
+    @include Background-template;
+    border: solid 2px whitesmoke;
+    border-radius: 2px;
+}
+.product-conteiner {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
 }
 
-.shop-tables {
-    display: none;
-    margin: 10px 20px 10px 20px;
-    width: auto;
-    height: auto;
+.product-card {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-img {
+    padding: 2px;
+    display: block;
+}
+
+.product-text {
+    margin: 1px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.product-button {
+    display: flex;
+    align-items: start;
+    margin: 4px;
+    padding: 2px;
     background-color: rgb(75, 139, 81, 0.6);
+    border: solid 2px whitesmoke;
+    border-radius: 3px;
 }
 
 

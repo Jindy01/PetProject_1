@@ -129,6 +129,8 @@ body {
   margin-top: 5px;
   padding: 5px;
   background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 2px;
 }
 
 .logos {
@@ -189,9 +191,11 @@ body {
 .main {
   display: block;
   margin: 10px 20px 10px 20px;
-  background-color: rgba(75, 139, 81, 0.6);
   width: auto;
   height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
 }
 
 .main-content {
@@ -212,15 +216,6 @@ h1 {
   font-size: 45px;
 }
 
-.blocks {
-  margin: 2px;
-  width: 500px;
-  height: 500px;
-  border: solid 2px black;
-  text-align: center;
-  background-color: aqua;
-}
-
 .img-block {
   display: -ms-grid;
   display: grid;
@@ -234,6 +229,8 @@ h1 {
           align-items: center;
   margin: 10px 20px 10px 20px;
   background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 10px;
 }
 
 .img-block > *:nth-child(1) {
@@ -291,6 +288,8 @@ h1 {
   background-color: rgba(75, 139, 81, 0.6);
   margin: 10px 5px 10px 10px;
   padding: 10px;
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
 }
 
 .shop-page-assortment {
@@ -303,18 +302,56 @@ h1 {
   color: aliceblue;
 }
 
-.shop-chears {
+.shop-chears,
+.shop-tables,
+.shop-couchs,
+.shop-beds {
   display: none;
   margin: 10px 20px 10px 20px;
   width: auto;
   height: auto;
   background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 2px;
 }
 
-.shop-tables {
-  display: none;
-  margin: 10px 20px 10px 20px;
-  width: auto;
-  height: auto;
+.product-conteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+}
+
+.product-card {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product-img {
+  padding: 2px;
+  display: block;
+}
+
+.product-text {
+  margin: 1px;
+  text-align: center;
+  color: aliceblue;
+}
+
+.product-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  margin: 4px;
+  padding: 2px;
   background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 3px;
 }

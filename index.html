@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ComFGreenS</title>
+    <title>TestComFGreenS</title>
     <!-- Иконки предаставлены сайтом https://www.flaticon.com/ru/ -->
     <link rel="shortcut icon" href="/img/logoHTML.png" />
     <link rel="stylesheet" href="/styles/style.css" />
@@ -20,7 +20,7 @@
         <div class="logos">
           <button onclick="openPage('main-page')" class="a" href="">
             <img class="icons" src="/img/logo.png" />
-            <p class="logotext" style="color: aliceblue">ComF</p>
+            <p class="logotext" style="color: aliceblue">TestComF</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">GreenS</p>
           </button>
         </div>
@@ -89,11 +89,12 @@
       </div>
     </div>
 
+    <!-- Страница товаров -->
     <main id="shop-page" class="scroll main-page-shop">
       <div class="shop-page-assortment">
         <div>
           <button
-            onclick="openPage('shop-chears')"
+            onclick="openPageAssortiment('shop-chears')"
             style="border: none"
             class="a"
           >
@@ -103,21 +104,21 @@
           </button>
         </div>
         <div>
-          <button onclick="openPage('shop-tables')" class="a">
+          <button onclick="openPageAssortiment('shop-tables')" class="a">
             <img class="icons" src="/img/Стол.png" alt="" />
 
             <p class="logotext">Столы</p>
           </button>
         </div>
         <div>
-          <button class="a">
+          <button onclick="openPageAssortiment('shop-couch')" class="a">
             <img class="icons" src="/img/Диван.png" alt="" />
 
             <p class="logotext">Диваны</p>
           </button>
         </div>
         <div>
-          <button class="a">
+          <button onclick="openPageAssortiment('shop-bed')" class="a">
             <img class="icons" src="/img/Кровать.png" alt="" />
 
             <p class="logotext">Кровати</p>
@@ -127,21 +128,124 @@
     </main>
 
     <div id="shop-chears" class="scroll_asortiment shop-chears">
-
-      ewfnuidhgwiqgrnbisbgfnsi
-      gbasfdasbgfyfdsagybukasb
-      bfdsafdasbgyudfgyubasasd
-      bgfyudasfdbgyuidsafguads
-
+      <!--  -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Cтуло.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Кардиган'</p>
+          <p>$19.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="img/Стуло-2.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Торисоль'</p>
+          <p>$14.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/стуло-3.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Маревлит'</p>
+          <p>$24.49</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Стуло-4.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Мобура'</p>
+          <p>$12.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
     </div>
 
     <div id="shop-tables" class="scroll_asortiment shop-tables">
+      <!--  -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Стуло-4.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Мобура'</p>
+          <p>$12.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Стуло-4.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Мобура'</p>
+          <p>$12.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Стуло-4.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Мобура'</p>
+          <p>$12.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="/img/Стуло-4.jpg" alt="" />
+        </div>
+        <div class="product-text">
+          <p>Стул 'Мобура'</p>
+          <p>$12.99</p>
+          <button class="product-button">В корзину</button>
+        </div>
+      </div>
 
-      adsasdgybifadsfgybzdfasgy
-      bsdgfyuabsfdagybsdfabgyus
-      fdabgyubgyuaisfdiuasbgfgf
-      yuagybfdasagyusbfdfsdfsio
+    </div>
 
+    <div id="shop-couch" class="scroll_asortiment shop-couchs">
+      <div>
+        <img src="/img/диван.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/диван2.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/диван3.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/диван4.jpg" alt="" />
+      </div>
+    </div>
+    <div id="shop-bed" class="scroll_asortiment shop-beds">
+      <div>
+        <img src="/img/кровать.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/кровать2.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/кровать3.jpg" alt="" />
+      </div>
+      <div>
+        <img src="/img/кровать4.jpg" alt="" />
+      </div>
     </div>
   </body>
 </html>
