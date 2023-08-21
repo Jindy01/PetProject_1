@@ -41,3 +41,48 @@ function openPageAssortiment(pageName) {
 
   document.getElementById(pageName).style.display = "flex";
 }
+
+const productArr = document.getElementsByClassName('product-card');
+const productArrName = document.getElementsByClassName('name-product');
+
+
+console.log(productArr);
+console.log(productArrName);
+
+const productCost = document.getElementsByClassName('cost-product');
+const productCostArray = Array.from(productCost).map(
+  elment => elment.innerText);
+
+console.log(productCostArray);
+
+// for (let costElement of productCostArr) {
+//   console.log(costElement);
+//   const costArr = []
+//   const costText = costElement.innerHTML;
+//   costArr.push(costText);
+// }
+
+// for (let costElement in productCostArr) {
+//   console.log(costElement);
+//   const costArr = []
+//   const costText = costElement.innerHTML;
+//   costArr.push(costText);
+// }
+
+
+// for(let productCard of productArr) {
+//   const nameProductParagraph = productCard.getElementsByClassName('name-product');
+//   const nameProduct = nameProductParagraph.textContent;
+//   console.log(nameProduct);
+// }
+
+// function getProductData() {
+  
+//   for(let productCard of allDataInProductCard) {
+//     const nameProduct = productCard.querySelector('p').textContent;
+//     console.log(nameProduct);
+//   } 
+
+// }
+
+// getProductData(productArrName);
