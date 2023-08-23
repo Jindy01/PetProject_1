@@ -49,45 +49,103 @@ function openFullPrice() {
   }
 }
 
-// Вывод имени товаров их стоимости и названия
-const productArr = document.getElementsByClassName("product-card");
-const productArrName = document.getElementsByClassName("name-product");
 
-console.log(productArr);
-console.log(productArrName);
+//  Корзина
+  const basketForProductCard = [];
+//  Сабирает данные по продуктовым карточкам
+function productCardInfoAndBuying(i) {
 
-const productCost = document.getElementsByClassName("cost-product");
-console.log(productCost.innerText);
+  const productCards = document.querySelectorAll(".product-card");
+  const names = Array.from(productCards).map((card) => {
+    const nameElements = card.querySelector(".name-product");
+    return nameElements.textContent;
+  });
 
-const productCostArray = Array.from(productCost).map(
-  (elment) => elment.innerText
-);
+  const prices = Array.from(productCards).map((card) => {
+    const priceElment = card.querySelector(".cost-product");
+    return priceElment.textContent;
+  });
 
-console.log(productCostArray);
-
-
-
-function getElemet() {
-
-  const $elem = document.getElementById("test-text");
-  const text = $elem.outerText;
-  console.log(text);
-
+  const buttons = Array.from(productCards).map((card) => {
+    const buttonElement = card.querySelector(".product-button");
+    return buttonElement.textContent;
+  });
+  
+  const objectForProductCard = {
+    nameProduct: names[i],
+    priceProbuct: prices[i],
+    idButton: buttons[i],
+  }
+  basketForProductCard.push(objectForProductCard);
+  console.log(basketForProductCard);
+  return objectForProductCard;
 }
-setTimeout(getElemet, 1)
-
-function getFullElements() {
-
-  const $elem = document.querySelectorAll("test-product-card");
-  const arrElem = Array.from($elem)
-  console.log(arrElem);
-  const text = $elem.innerHTML;
+setTimeout(productCardInfoAndBuying, 100);
 
 
-}
-setTimeout(getFullElements, 1);
- 
 
+
+// function priceProduct() {
+
+//   const productCards = document.querySelectorAll(".product-card");
+//   const prices = Array.from(productCards).map((card) => {
+//     const priceElment = card.querySelector(".cost-product");
+//     return priceElment.textContent;
+//   });
+//   console.log(prices);
+// }
+// setTimeout(priceProduct, 100);
+
+// function nameProduct() {
+
+//   const productCards = document.querySelectorAll(".product-card");
+//   const names = Array.from(productCards).map((card) => {
+//     const nameElements = card.querySelector(".name-product");
+//     return nameElements.textContent;
+//   });
+//   console.log(names);
+// }
+// setTimeout(nameProduct, 100)
+
+// function buyingProduct() {
+
+//   const productButton = document.querySelectorAll(".product-card");
+//   const buttons = Array.from(productButton).map((card) => {
+//     const priceElment = card.querySelector(".product-button");
+//     return priceElment.textContent;
+//   });
+//   console.log(buttons);
+// }
+// setTimeout(buyingProduct, 100)
+
+
+// function getElementsText() {
+//   try {
+//     const testQuery = document.querySelectorAll(".product-card");
+//     const resultSortTestQuery = testQuery.map((element) =>
+//       element.querySelector(".cost-product")
+//     );
+
+//     console.log(testQuery);
+//     console.log(resultSortTestQuery);
+//   } catch {
+//     console.log("Ошибка!");
+//   }
+// }
+// setTimeout(getElementsText, 100);
+
+// function testGetAllPriceList() {
+
+//   const elements = document.getElementById('test-product-card');
+//   const arrElemets = Array.from(elements);
+//   for(let key of elements) {
+//     console.log(key);
+//   }
+// }
+
+// setTimeout(testGetAllPriceList, 1)
+
+//  TASK додлать поис эллементов для пкупки товаров
 
 // for (let costElement of productCostArr) {
 //   console.log(costElement);
