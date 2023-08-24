@@ -1,4 +1,6 @@
 "use strict";
+//      Task OptimisationCode   //
+
 
 function closed() {
   alert("В разработке");
@@ -20,6 +22,13 @@ function openPage(pageName) {
   a = document.getElementsByClassName("a");
   for (i = 0; i < a.length; ++i) {
     a[i].className = a[i].className.replace("active", "");
+  }
+
+  if(pageName === 'shop-page') {
+    document.getElementById("shop-chears").style.display = 'flex';
+    document.getElementById("shop-tables").style.display = 'flex';
+    document.getElementById("shop-couch").style.display = 'flex';
+    document.getElementById("shop-bed").style.display = 'flex';
   }
 
   document.getElementById(pageName).style.display = "flex";
@@ -49,12 +58,10 @@ function openFullPrice() {
   }
 }
 
-
 //  Корзина
-  const basketForProductCard = [];
+const basketForProductCard = [];
 //  Сабирает данные по продуктовым карточкам
 function productCardInfoAndBuying(i) {
-
   const productCards = document.querySelectorAll(".product-card");
   const names = Array.from(productCards).map((card) => {
     const nameElements = card.querySelector(".name-product");
@@ -70,20 +77,17 @@ function productCardInfoAndBuying(i) {
     const buttonElement = card.querySelector(".product-button");
     return buttonElement.textContent;
   });
-  
+
   const objectForProductCard = {
     nameProduct: names[i],
     priceProbuct: prices[i],
     idButton: buttons[i],
-  }
+  };
   basketForProductCard.push(objectForProductCard);
   console.log(basketForProductCard);
   return objectForProductCard;
 }
 setTimeout(productCardInfoAndBuying, 100);
-
-
-
 
 // function priceProduct() {
 
@@ -117,7 +121,6 @@ setTimeout(productCardInfoAndBuying, 100);
 //   console.log(buttons);
 // }
 // setTimeout(buyingProduct, 100)
-
 
 // function getElementsText() {
 //   try {
