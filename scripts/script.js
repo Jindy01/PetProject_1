@@ -1,5 +1,6 @@
 "use strict";
-//      Task OptimisationCode   //
+//  Сдлеать интеграцию тудушки    //
+
 
 
 function closed() {
@@ -24,11 +25,12 @@ function openPage(pageName) {
     a[i].className = a[i].className.replace("active", "");
   }
 
-  if(pageName === 'shop-page') {
-    document.getElementById("shop-chears").style.display = 'flex';
-    document.getElementById("shop-tables").style.display = 'flex';
-    document.getElementById("shop-couch").style.display = 'flex';
-    document.getElementById("shop-bed").style.display = 'flex';
+  if (pageName === "shop-page") {
+
+    document.getElementById("shop-chears").style.display = "flex";
+    document.getElementById("shop-tables").style.display = "flex";
+    document.getElementById("shop-couch").style.display = "flex";
+    document.getElementById("shop-bed").style.display = "flex";
   }
 
   document.getElementById(pageName).style.display = "flex";
@@ -88,6 +90,22 @@ function productCardInfoAndBuying(i) {
   return objectForProductCard;
 }
 setTimeout(productCardInfoAndBuying, 100);
+
+
+// const searchShopPage = document.querySelectorAll("shop-couch");
+// console.log(searchShopPage);
+
+
+
+// function logCouch() {
+//   const searchShopPage = document.querySelectorAll(".scroll_asortiment");
+//   const shopPage = Array.from(searchShopPage).map((card) => {
+//     const page = card.querySelector.
+//   })
+//   console.log(searchShopPage);
+// }
+
+// setTimeout(logCouch, 100);
 
 // function priceProduct() {
 
