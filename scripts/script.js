@@ -1,14 +1,12 @@
 "use strict";
-//  Сдлеать интеграцию тудушки    //
-
-
+//  Сделать удаление товара через id и булево выражение
 
 function closed() {
   alert("В разработке");
 }
 //  Для перехода между страничками
 function openPage(pageName) {
-  let i, tabcontent, tabcontentAsort, a;
+  let i, tabcontent, tabcontentAsort, tabcontentBasket, a;
 
   tabcontent = document.getElementsByClassName("scroll");
   for (i = 0; i < tabcontent.length; ++i) {
@@ -20,13 +18,17 @@ function openPage(pageName) {
     tabcontentAsort[i].style.display = "none";
   }
 
+  tabcontentBasket = document.getElementsByClassName("basket-container");
+  for (i = 0; i < tabcontentBasket.length; ++i) {
+    tabcontentBasket[i].style.display = "none";
+  }
+
   a = document.getElementsByClassName("a");
   for (i = 0; i < a.length; ++i) {
     a[i].className = a[i].className.replace("active", "");
   }
 
   if (pageName === "shop-page") {
-
     document.getElementById("shop-chears").style.display = "flex";
     document.getElementById("shop-tables").style.display = "flex";
     document.getElementById("shop-couch").style.display = "flex";
@@ -51,13 +53,21 @@ function openPageAssortiment(pageName) {
 
   document.getElementById(pageName).style.display = "flex";
 }
-
+//  Для отоброжения всего при переходе в товары
 function openFullPrice() {
   let i, priceContent;
   priceContent = document.getElementsByClassName("scroll_asortiment");
   for (i = 0; i < priceContent.length; ++i) {
     priceContent[i].style.display = "flex";
   }
+}
+
+const pullRandomNumber = [];
+
+function globalRandomNumber() {
+  let globalRandomNumber = Math.random();
+  pullRandomNumber.unshift(globalRandomNumber);
+  return pullRandomNumber;
 }
 
 //  Корзина
@@ -79,23 +89,81 @@ function productCardInfoAndBuying(i) {
     const buttonElement = card.querySelector(".product-button");
     return buttonElement.textContent;
   });
-
+  // Вызов рандомного числа
+  globalRandomNumber();
+  //    После сбора данных создаёт объект
   const objectForProductCard = {
     nameProduct: names[i],
     priceProbuct: prices[i],
     idButton: buttons[i],
+    delete: false,
+    id: pullRandomNumber[0],
   };
+//  Проверка на пустой обьект
+  if (objectForProductCard.nameProduct == undefined) {
+    return;
+  }
+
   basketForProductCard.push(objectForProductCard);
   console.log(basketForProductCard);
+  // Вызывается для отрисовки на странице
+  renderCart();
   return objectForProductCard;
 }
+
 setTimeout(productCardInfoAndBuying, 100);
 
+function deleteProductCard() {
+
+}
+
+function renderCart() {
+  const basketStore = document.querySelector(".basket-store");
+  console.log(basketStore);
+  // let randomNumber = Math.random();
+
+  let htmlBlock = "";
+
+  basketForProductCard.forEach((product) => {
+    if (!product || !product.nameProduct) {
+      return;
+    }
+    htmlBlock += `<div class="product">
+    <p>Товар:${product.nameProduct}</p>
+    <p>Цена:${product.priceProbuct}</p>
+    <button id="${pullRandomNumber[0]}">Удалить</button>
+    </div>`;
+  });
+
+  basketStore.innerHTML = htmlBlock;
+}
+
+//  Проверка с удалением 
+function checkArr() {
+  basketForProductCard.pop();
+  console.log(basketForProductCard);
+}
+checkArr();
+
+// function deleteComponentInBasket() {
+//   const component = document.getElementsByClassName('product');
+//   const remove = document.getElementsByClassName('remove');
+
+//   console.log(component);
+//   console.log(remove);
+
+// }
+
+// document.addEventListener('DOMContentLoaded', function(){
+
+//   if (basketForProductCard.length == 0) {
+//     const basketStoreZero = document.getElementsByClassName("product-none");
+//     basketStoreZero.style.display = 'none'
+//   }
+// })
 
 // const searchShopPage = document.querySelectorAll("shop-couch");
 // console.log(searchShopPage);
-
-
 
 // function logCouch() {
 //   const searchShopPage = document.querySelectorAll(".scroll_asortiment");

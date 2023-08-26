@@ -355,3 +355,59 @@ h1 {
   border: solid 2px whitesmoke;
   border-radius: 3px;
 }
+
+.basket-store {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 20px 10px 20px;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
+}
+
+.product {
+  display: block;
+  color: aliceblue;
+  margin: 10px;
+}
+
+.product-none {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.purchased-goods-statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 20px 10px 20px;
+  padding: 10px;
+  width: 250px;
+  height: 200px;
+  background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
+  color: whitesmoke;
+}
+
+.basket-container {
+  display: none;
+  margin: 10px 20px 10px 20px;
+  width: auto;
+  height: auto;
+  background-color: rgba(75, 139, 81, 0.6);
+  border: solid 2px whitesmoke;
+  border-radius: 20px;
+}

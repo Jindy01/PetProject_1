@@ -33,7 +33,7 @@
             <p class="logotext" style="color: rgb(190, 218, 118)">овары</p>
           </button>
           <!-- .. -->
-          <button onclick="openPage('')" class="a" href="">
+          <button onclick="openPage('basket-container')" class="a" href="">
             <img class="icons" src="/img/Корзина.png" />
             <p class="logotext" style="color: aliceblue">К</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">орзина</p>
@@ -44,6 +44,7 @@
             <p class="logotext" style="color: aliceblue">O</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">Нас</p>
           </button>
+          <button onclick="checkArr()">-ARR</button>
           <!-- .. -->
           <!-- Сделать линейку товаров  -->
           <!-- оформить основную часть сайта  -->
@@ -334,10 +335,24 @@
         </div>
       </div>
     </div>
+    <!-- Корзина товаров -->
+    <main class="basket-Main">
+      <div id="basket-container" class="basket-container">
+        <div class="purchased-goods-statistics">
+          <p>Статистика:</p>
+          <br>
+          <p>Купленно товаров:</p>
+          <br>
+          <p>Стоимость всего:</p>
+          <br>
+          <p>Скидка:</p>
+          <br>
+          <p>Итог:</p>
 
-    <main class="shopping-cart">
-      <div class="cart">
-        dfdoiusasdainuoasnduhfi
+        </div>
+        <div class="basket-store">
+          <p class="product-none">Нету товаров</p>
+        </div>
       </div>
     </main>
   </body>
