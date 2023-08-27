@@ -62,11 +62,14 @@ function openFullPrice() {
   }
 }
 
+//   Глобальное рандомное число
 const pullRandomNumber = [];
 
 function globalRandomNumber() {
   let globalRandomNumber = Math.random();
+
   pullRandomNumber.unshift(globalRandomNumber);
+  console.log(pullRandomNumber);
   return pullRandomNumber;
 }
 
@@ -84,22 +87,23 @@ function productCardInfoAndBuying(i) {
     const priceElment = card.querySelector(".cost-product");
     return priceElment.textContent;
   });
-
-  const buttons = Array.from(productCards).map((card) => {
-    const buttonElement = card.querySelector(".product-button");
-    return buttonElement.textContent;
-  });
-  // Вызов рандомного числа
-  globalRandomNumber();
-  //    После сбора данных создаёт объект
-  const objectForProductCard = {
-    nameProduct: names[i],
+  
+  // const buttons = Array.from(productCards).map((card) => {
+    //   const buttonElement = card.querySelector(".product-button");
+    //   return buttonElement.textContent;
+    // });
+    // Вызов рандомного числа
+    globalRandomNumber();
+    //    После сбора данных создаёт объект
+    const objectForProductCard = {
+      nameProduct: names[i],
     priceProbuct: prices[i],
-    idButton: buttons[i],
+    // idButton: buttons[i],
     delete: false,
     id: pullRandomNumber[0],
   };
-//  Проверка на пустой обьект
+  deleteProductCard(objectForProductCard);
+  //  Проверка на пустой обьект
   if (objectForProductCard.nameProduct == undefined) {
     return;
   }
@@ -113,14 +117,9 @@ function productCardInfoAndBuying(i) {
 
 setTimeout(productCardInfoAndBuying, 100);
 
-function deleteProductCard() {
-
-}
-
 function renderCart() {
   const basketStore = document.querySelector(".basket-store");
   console.log(basketStore);
-  // let randomNumber = Math.random();
 
   let htmlBlock = "";
 
@@ -128,22 +127,59 @@ function renderCart() {
     if (!product || !product.nameProduct) {
       return;
     }
-    htmlBlock += `<div class="product">
+    htmlBlock = `<div id="product-ID"  class="product">
     <p>Товар:${product.nameProduct}</p>
     <p>Цена:${product.priceProbuct}</p>
-    <button id="${pullRandomNumber[0]}">Удалить</button>
+    <button onclick="getIdForButton(this)"
+    id="${pullRandomNumber[0]}">Удалить</button>
     </div>`;
   });
 
-  basketStore.innerHTML = htmlBlock;
+  basketStore.innerHTML += htmlBlock;
 }
 
-//  Проверка с удалением 
+//  Проверка с удалением
 function checkArr() {
+  const parentElement = document.getElementById("basket-store-ID");
+  const childElement = document.getElementById("product-ID");
+  const lastChildElement = parentElement.lastChild;
+//  Дорелиазовать проверку на пустую корзину 
+  // console.log(parentElement);
+  // console.log(childElement);
+  // try {
+  //   parentElement.removeChild(childElement);
+  // } catch {
+  //   return;
+  // }
+
+  if (lastChildElement.nodeType === 1) {
+    lastChildElement.remove();
+  }
   basketForProductCard.pop();
   console.log(basketForProductCard);
 }
-checkArr();
+
+function checkObj() {
+  console.log(basketForProductCard);
+}
+
+function getIdForButton(button) {
+  const id = button.getAttribute("id");
+  console.log(id);
+  deleteProductCard(getIdForButton)
+  return id;
+}
+
+//  Для поиска и удаления кнопки
+function deleteProductCard(productCardInfoAndBuying, getIdForButton) {
+  console.log(productCardInfoAndBuying.id);
+  console.log(getIdForButton);
+  
+  if (productCardInfoAndBuying.id == getIdForButton) {
+    console.log('=');
+  }
+  
+}
 
 // function deleteComponentInBasket() {
 //   const component = document.getElementsByClassName('product');
