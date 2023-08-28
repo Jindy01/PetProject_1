@@ -44,7 +44,7 @@
             <p class="logotext" style="color: aliceblue">O</p>
             <p class="logotext" style="color: rgb(190, 218, 118)">Нас</p>
           </button>
-          <button style="color: aliceblue;" onclick="checkArr()">-ARR</button>
+          <button style="color: aliceblue;" onclick="getInformationInBasket()">-INF</button>
           <button style="color: aliceblue;" onclick="checkObj()">-OBJ</button>
           <!-- .. -->
           <!-- Сделать линейку товаров  -->
@@ -342,13 +342,13 @@
         <div class="purchased-goods-statistics">
           <p>Статистика:</p>
           <br>
-          <p>Купленно товаров:</p>
+          <p id="buying-product-cards">Купленно товаров: 0</p>
           <br>
-          <p>Стоимость всего:</p>
+          <p id="cost-product-cards">Стоимость всего: 0</p>
           <br>
-          <p>Скидка:</p>
+          <p id="discount-product-cards">Скидка: 0</p>
           <br>
-          <p>Итог:</p>
+          <p id="total-product-cards">Итог: 0</p>
         </div>
         <div id="basket-store-ID" class="basket-store">
           <!-- <p class="product-none">Нету товаров</p> -->

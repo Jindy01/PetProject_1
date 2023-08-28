@@ -1,5 +1,8 @@
 "use strict";
 //  Сделать удаление товара через id и булево выражение
+//  Идея по поводу удаления: Делать непосредственно в DOM дереве ... !
+//  Приём ! Оптимизация кода !!!
+//  Доделать функцию и массив !!
 
 function closed() {
   alert("В разработке");
@@ -69,7 +72,6 @@ function globalRandomNumber() {
   let globalRandomNumber = Math.random();
 
   pullRandomNumber.unshift(globalRandomNumber);
-  console.log(pullRandomNumber);
   return pullRandomNumber;
 }
 
@@ -87,22 +89,15 @@ function productCardInfoAndBuying(i) {
     const priceElment = card.querySelector(".cost-product");
     return priceElment.textContent;
   });
-  
-  // const buttons = Array.from(productCards).map((card) => {
-    //   const buttonElement = card.querySelector(".product-button");
-    //   return buttonElement.textContent;
-    // });
-    // Вызов рандомного числа
-    globalRandomNumber();
-    //    После сбора данных создаёт объект
-    const objectForProductCard = {
-      nameProduct: names[i],
+  // Вызов рандомного числа
+  globalRandomNumber();
+  //    После сбора данных создаёт объект
+  const objectForProductCard = {
+    nameProduct: names[i],
     priceProbuct: prices[i],
-    // idButton: buttons[i],
-    delete: false,
     id: pullRandomNumber[0],
   };
-  deleteProductCard(objectForProductCard);
+  // deleteProductCard(objectForProductCard);
   //  Проверка на пустой обьект
   if (objectForProductCard.nameProduct == undefined) {
     return;
@@ -129,8 +124,8 @@ function renderCart() {
     }
     htmlBlock = `<div id="product-ID"  class="product">
     <p>Товар:${product.nameProduct}</p>
-    <p>Цена:${product.priceProbuct}</p>
-    <button onclick="getIdForButton(this)"
+    <p class="price" id="price">Цена:${product.priceProbuct}</p>
+    <button onclick="deleteProductCard(this)"
     id="${pullRandomNumber[0]}">Удалить</button>
     </div>`;
   });
@@ -142,44 +137,65 @@ function renderCart() {
 function checkArr() {
   const parentElement = document.getElementById("basket-store-ID");
   const childElement = document.getElementById("product-ID");
-  const lastChildElement = parentElement.lastChild;
-//  Дорелиазовать проверку на пустую корзину 
-  // console.log(parentElement);
-  // console.log(childElement);
-  // try {
-  //   parentElement.removeChild(childElement);
-  // } catch {
-  //   return;
-  // }
 
-  if (lastChildElement.nodeType === 1) {
-    lastChildElement.remove();
-  }
-  basketForProductCard.pop();
-  console.log(basketForProductCard);
 }
 
 function checkObj() {
   console.log(basketForProductCard);
 }
-
-function getIdForButton(button) {
-  const id = button.getAttribute("id");
-  console.log(id);
-  deleteProductCard(getIdForButton)
-  return id;
+//  Удаления товара с полки 
+function deleteProductCard(button) {
+  const idS = button.getAttribute("id");
+  let resultArr = basketForProductCard.filter((obj, index) => {
+    if (obj.id == idS) {
+      delete basketForProductCard[index];
+    }
+  });
+  button.parentNode.remove();
 }
+
+function getInformationInBasket() {
+
+  // const infoBuying = document.getElementById('buying-product-cards');
+  // const infoCost = document.getElementById('cost-product-cards');
+  // const infoDiscount = document.getElementById('discount-product-cards');
+  // const infoTotal = document.getElementById('total-product-cards');
+  // const testResult = basketForProductCard.find(ob
+  // const parentElement = document.getElementById("basket-store-ID");
+  // const childElement = document.getElementById("product-ID");
+  // let result = childElement.getAttribute('cost-product-cards');
+  // let resultSelector = document.getElementById('price')
+  // let resultString = resultSelector.textContent;
+  // let resultNumber = parseFloat(resultString.replace('Цена:$', ''));
+  // console.log(resultNumber);
+
+  let resultPrice = basketForProductCard.forEach(obj => {
+    // let result =+ obj.priceProbuct;
+    // console.log(result )
+    let result = obj.priceProbuct;
+    let resultForSumm = parseFloat(result.replace('$', ''))
+    console.log(resultForSumm);
+    let totalCost = resultForSumm;
+    console.log(totalCost);
+  })
+  // let allcost =+ resultNumber;
+  // console.log(allcost);
+  // console.log(infoBuying);
+  // console.log(infoCost);
+  // console.log(infoDiscount);
+  // console.log(infoTotal);
+}
+
 
 //  Для поиска и удаления кнопки
-function deleteProductCard(productCardInfoAndBuying, getIdForButton) {
-  console.log(productCardInfoAndBuying.id);
-  console.log(getIdForButton);
-  
-  if (productCardInfoAndBuying.id == getIdForButton) {
-    console.log('=');
-  }
-  
-}
+// function deleteProductCard(productCardInfoAndBuying) {
+//   console.log(productCardInfoAndBuying.id);
+//   // console.log(getIdForButton);
+
+//   if (productCardInfoAndBuying.id == getIdForButton) {
+//     console.log("=");
+//   }
+// }
 
 // function deleteComponentInBasket() {
 //   const component = document.getElementsByClassName('product');
