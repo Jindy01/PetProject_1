@@ -1,6 +1,6 @@
 "use strict";
-//  Сделать удаление товара через id и булево выражение
-//  Идея по поводу удаления: Делать непосредственно в DOM дереве ... !
+//  TASKS
+//  Доделать прибавление общей суммы товара
 //  Приём ! Оптимизация кода !!!
 //  Доделать функцию и массив !!
 
@@ -110,11 +110,8 @@ function productCardInfoAndBuying(i) {
   return objectForProductCard;
 }
 
-setTimeout(productCardInfoAndBuying, 100);
-
 function renderCart() {
   const basketStore = document.querySelector(".basket-store");
-  console.log(basketStore);
 
   let htmlBlock = "";
 
@@ -131,61 +128,56 @@ function renderCart() {
   });
 
   basketStore.innerHTML += htmlBlock;
+  costElementRender();
 }
 
-//  Проверка с удалением
-function checkArr() {
-  const parentElement = document.getElementById("basket-store-ID");
-  const childElement = document.getElementById("product-ID");
+//  Удаления товара с полки
+function deleteProductCard(button) {
+  const idS = button.getAttribute("id");
+  let resultArr = basketForProductCard.filter((obj, index) => {
+    if (obj.id == idS) {
+      basketForProductCard.splice(index, 1);
+    }
+  });
+  button.parentNode.remove();
+  //  Костыль ! Убирает undafindf 
+  costElementRender();
+  costElementRender();
+}
 
+function getInformationInBasket() {
+  let resultPrice = basketForProductCard.map((obj) => {
+    let resultForSumm = parseFloat(obj.priceProbuct.replace("$", ""));
+    return resultForSumm;
+  });
+  try {
+    let result = resultPrice.reduce(
+      (firstNum, secondNum) => firstNum + secondNum
+    );
+    return result.toString();
+  } catch {
+    return;
+  }
 }
 
 function checkObj() {
   console.log(basketForProductCard);
 }
-//  Удаления товара с полки 
-function deleteProductCard(button) {
-  const idS = button.getAttribute("id");
-  let resultArr = basketForProductCard.filter((obj, index) => {
-    if (obj.id == idS) {
-      delete basketForProductCard[index];
-    }
-  });
-  button.parentNode.remove();
+
+function costElementRender() {
+  const costElement = document.getElementById("load-cost");
+  if (costElement.textContent == "undefined") {
+    costElement.textContent = `0`;
+  } else {
+    costElement.textContent = `${getInformationInBasket()}`;
+  }
+
+  const quantityElement = document.getElementById("load-quantity");
+  let renderQuantityElement = (quantityElement.textContent = basketForProductCard.length);
+  if (basketForProductCard.length == 0) {
+    quantityElement.textContent = "0";
+  }
 }
-
-function getInformationInBasket() {
-
-  // const infoBuying = document.getElementById('buying-product-cards');
-  // const infoCost = document.getElementById('cost-product-cards');
-  // const infoDiscount = document.getElementById('discount-product-cards');
-  // const infoTotal = document.getElementById('total-product-cards');
-  // const testResult = basketForProductCard.find(ob
-  // const parentElement = document.getElementById("basket-store-ID");
-  // const childElement = document.getElementById("product-ID");
-  // let result = childElement.getAttribute('cost-product-cards');
-  // let resultSelector = document.getElementById('price')
-  // let resultString = resultSelector.textContent;
-  // let resultNumber = parseFloat(resultString.replace('Цена:$', ''));
-  // console.log(resultNumber);
-
-  let resultPrice = basketForProductCard.forEach(obj => {
-    // let result =+ obj.priceProbuct;
-    // console.log(result )
-    let result = obj.priceProbuct;
-    let resultForSumm = parseFloat(result.replace('$', ''))
-    console.log(resultForSumm);
-    let totalCost = resultForSumm;
-    console.log(totalCost);
-  })
-  // let allcost =+ resultNumber;
-  // console.log(allcost);
-  // console.log(infoBuying);
-  // console.log(infoCost);
-  // console.log(infoDiscount);
-  // console.log(infoTotal);
-}
-
 
 //  Для поиска и удаления кнопки
 // function deleteProductCard(productCardInfoAndBuying) {
