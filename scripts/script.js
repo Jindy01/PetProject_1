@@ -97,7 +97,6 @@ function productCardInfoAndBuying(i) {
     priceProbuct: prices[i],
     id: pullRandomNumber[0],
   };
-  // deleteProductCard(objectForProductCard);
   //  Проверка на пустой обьект
   if (objectForProductCard.nameProduct == undefined) {
     return;
@@ -131,7 +130,7 @@ function renderCart() {
   costElementRender();
 }
 
-//  Удаления товара с полки
+//  Удаления товара с корзины
 function deleteProductCard(button) {
   const idS = button.getAttribute("id");
   let resultArr = basketForProductCard.filter((obj, index) => {
@@ -140,11 +139,11 @@ function deleteProductCard(button) {
     }
   });
   button.parentNode.remove();
-  //  Костыль ! Убирает undafindf 
+  //  Костыль ! Убирает undefined
   costElementRender();
   costElementRender();
 }
-
+//  Выводит параметры в корзине
 function getInformationInBasket() {
   let resultPrice = basketForProductCard.map((obj) => {
     let resultForSumm = parseFloat(obj.priceProbuct.replace("$", ""));
@@ -154,7 +153,10 @@ function getInformationInBasket() {
     let result = resultPrice.reduce(
       (firstNum, secondNum) => firstNum + secondNum
     );
-    return result.toString();
+    // if (basketForProductCard.length >= 3) {
+    //   result = (result/100) * 3;
+    // }
+    return result;
   } catch {
     return;
   }
@@ -163,20 +165,49 @@ function getInformationInBasket() {
 function checkObj() {
   console.log(basketForProductCard);
 }
-
+//  Показывает цену и кол-во товаров
 function costElementRender() {
   const costElement = document.getElementById("load-cost");
+  let normalNumb = getInformationInBasket();
   if (costElement.textContent == "undefined") {
     costElement.textContent = `0`;
   } else {
-    costElement.textContent = `${getInformationInBasket()}`;
+    try {
+      costElement.textContent = `${normalNumb.toFixed(2)}`;
+    } catch {
+      costElement.textContent = `0`;
+    }
   }
 
   const quantityElement = document.getElementById("load-quantity");
-  let renderQuantityElement = (quantityElement.textContent = basketForProductCard.length);
+  let renderQuantityElement = (quantityElement.textContent =
+    basketForProductCard.length);
   if (basketForProductCard.length == 0) {
     quantityElement.textContent = "0";
   }
+
+  const discountElement = document.getElementById("load-discount");
+  let discount = getInformationInBasket();
+  if (basketForProductCard.length < 2 && basketForProductCard.length >2) {
+    discountElement.textContent = "0";
+  } else if (basketForProductCard.length == 3) {
+    discount = (discount/100) * 3;
+  }
+  // } else if (basketForProductCard.length >= 3) discount = (discount / 100) * 3;
+
+  // else if (basketForProductCard.length >= 5) {
+  //   discount = (discount / 100) * 5;
+  // } else if (basketForProductCard.length < 3) {
+  //   discountElement.textContent = "0";
+  // }
+  // try {
+  //   discountElement.textContent = `${discount.toFixed(2)}`;
+  //   if (discountElement.textContent == "NaN") {
+  //     discountElement.textContent = "0";
+  //   }
+  // } catch {
+  //   discountElement.textContent = "0";
+  // }
 }
 
 //  Для поиска и удаления кнопки
