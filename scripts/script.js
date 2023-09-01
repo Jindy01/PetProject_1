@@ -9,7 +9,7 @@ function closed() {
 }
 //  Для перехода между страничками
 function openPage(pageName) {
-  let i, tabcontent, tabcontentAsort, tabcontentBasket, a;
+  let i, tabcontent, tabcontentAsort, tabcontentBasket, tabcontentPortfolio, a;
 
   tabcontent = document.getElementsByClassName("scroll");
   for (i = 0; i < tabcontent.length; ++i) {
@@ -24,6 +24,10 @@ function openPage(pageName) {
   tabcontentBasket = document.getElementsByClassName("basket-container");
   for (i = 0; i < tabcontentBasket.length; ++i) {
     tabcontentBasket[i].style.display = "none";
+  }
+  tabcontentPortfolio = document.getElementsByClassName("main-portfolio");
+  for (i = 0; i < tabcontentPortfolio.length; ++i) {
+    tabcontentPortfolio[i].style.display = "none";
   }
 
   a = document.getElementsByClassName("a");
@@ -210,7 +214,7 @@ function costElementRender() {
     try {
       totalCost.textContent = `${getInformationInBasket().toFixed(2)}`;
     } catch {
-      totalCost.textContent = '0';
+      totalCost.textContent = "0";
     }
   } else {
     let totalNumber = getInformationInBasket() - discount;
