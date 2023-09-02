@@ -132,6 +132,7 @@ function renderCart() {
 
   basketStore.innerHTML += htmlBlock;
   costElementRender();
+  loadNoneCard();
 }
 
 //  Удаления товара с корзины
@@ -146,6 +147,7 @@ function deleteProductCard(button) {
   //  Костыль ! Убирает undefined
   costElementRender();
   costElementRender();
+  loadNoneCard();
 }
 //  Выводит параметры в корзине
 function getInformationInBasket() {
@@ -221,6 +223,21 @@ function costElementRender() {
     totalCost.textContent = `${totalNumber.toFixed(2)}`;
   }
 }
+
+//  Добовяет текст когда нету товров
+function loadNoneCard() {
+  if (basketForProductCard.length == 0) {
+    document.getElementById('product-none').style.display = 'flex';
+  } 
+  else if (basketForProductCard.length == 1) {
+    document.getElementById('product-none').style.display = 'none';
+  }
+}
+
+setTimeout(loadNoneCard, 100)
+
+// setTimeout(loadNoneCard, 100)
+
 
 //  Для поиска и удаления кнопки
 // function deleteProductCard(productCardInfoAndBuying) {
